@@ -1,258 +1,579 @@
 /* VARIAVEIS E CONFIGURACOES GLOBAIS */
 :root {
-    --netflix-red: #E50914;            /* Vermelho vibrante da Netflix - cor primaria */
-    --netflix-dark: #423a3a;           /* Cinza muito escuro - fundo principal */
-    --netflix-darker: #0f0f0f;         /* Preto quase puro - fundo do gradiente */
-    --netflix-gray: #808080;           /* Cinza neutro - textos secundarios */
-    --netflix-light: #f5f5f1;          /* Branco quente - textos principais */
-    
-    --font-primary: 'Roboto', Tahoma, Geneva, Verdana, sans-serif; /* Fonte padrao do site */
-    --transition: all 0.3s ease;       /* Transicao suave para animations (0.3 segundos) */
+    --netflix-red: #E50914;
+    /* Vermelho vibrante da Netflix - cor primaria */
+    --netflix-dark: #423a3a;
+    /* Cinza muito escuro - fundo principal */
+    --netflix-darker: #0f0f0f;
+    /* Preto quase puro - fundo do gradiente */
+    --netflix-gray: #808080;
+    /* Cinza neutro - textos secundarios */
+    --netflix-light: #f5f5f1;
+    /* Branco quente - textos principais */
+
+    --font-primary: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
+    /* Fonte padrao do site */
+    --transition: all 0.3s ease;
+    /* Transicao suave para animations (0.3 segundos) */
 }
 
 /* RESET E ESTILOS BASE */
 * {
-    margin: 0;               /* Remove margens padrao de todos os elementos */
-    padding: 0;              /* Remove preenchimento padrao de todos os elementos */
-    box-sizing: border-box;  /* Inclui border e padding no calculo da largura/altura */
+    margin: 0;
+    /* Remove margens padrao de todos os elementos */
+    padding: 0;
+    /* Remove preenchimento padrao de todos os elementos */
+    box-sizing: border-box;
+    /* Inclui border e padding no calculo da largura/altura */
 }
 
 html {
-    font-size: 14px;         /* Tamanho base da fonte - 1rem = 16px */
+    font-size: 14px;
+    /* Tamanho base da fonte - 1rem = 16px */
 }
 
 body {
-    background: linear-gradient(135deg, var(--netflix-darker) 0%, var(--netflix-dark) 100%); /* Gradiente diagonal preto->cinza */
-    color: var(--netflix-light);  /* Cor do texto principal (branco) */
-    font-family: var(--font-primary); /* Aplica a fonte configurada */
-    line-height: 1.6;        /* Espacamento entre linhas (1.6x o tamanho da fonte) */
-    min-height: 100vh;       /* Ocupa no minimo a altura total da tela */
-    overflow: hidden;        /* Remove a barra de rolagem e impede o scroll */
+    background: linear-gradient(135deg, var(--netflix-darker) 0%, var(--netflix-dark) 100%);
+    /* Gradiente diagonal preto->cinza */
+    color: var(--netflix-light);
+    /* Cor do texto principal (branco) */
+    font-family: var(--font-primary);
+    /* Aplica a fonte configurada */
+    line-height: 1.6;
+    /* Espacamento entre linhas (1.6x o tamanho da fonte) */
+    min-height: 100vh;
+    /* Ocupa no minimo a altura total da tela */
+    overflow: hidden;
+    /* Remove a barra de rolagem e impede o scroll */
 }
 
 /* NAVBAR COM LOGO */
 .navbar {
-    position: fixed;         /* Fica fixo no topo */
-    top: 0;                  /* Alinhado ao topo */
-    left: 0;                 /* Alinhado a esquerda */
-    width: 100%;             /* Ocupa 100% da largura */
-    padding: 1.5rem 2rem;    /* Espacamento interno */
-    background: linear-gradient(180deg, rgba(15, 15, 15, 0.9) 0%, transparent 100%); /* Gradiente de fundo escuro */
-    z-index: 100;            /* Fica acima de outros elementos */
+    position: fixed;
+    /* Fica fixo no topo */
+    top: 0;
+    /* Alinhado ao topo */
+    left: 0;
+    /* Alinhado a esquerda */
+    width: 100%;
+    /* Ocupa 100% da largura */
+    padding: 1.5rem 2rem;
+    /* Espacamento interno */
+    background: linear-gradient(180deg, rgba(15, 15, 15, 0.9) 0%, transparent 100%);
+    /* Gradiente de fundo escuro */
+    z-index: 100;
+    /* Fica acima de outros elementos */
+    display: flex;
+    /* Flexbox para alinhar logo e botao */
+    justify-content: space-between;
+    /* Logo a esquerda, botao a direita */
+    align-items: center;
+    /* Centraliza verticalmente */
 }
 
 /* LOGO NETFLIX */
 .logo {
-    font-size: 2.5rem;       /* Titulo do logo */
-    font-weight: 900;        /* Texto super ousado (negrito maximo) */
-    color: var(--netflix-red); /* Cor vermelha da Netflix */
-    letter-spacing: 4px;     /* Espaco grande entre letras */
-    font-family: Arial, sans-serif; /* Fonte mais ousada */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para destaque */
+    font-size: 2.5rem;
+    /* Titulo do logo */
+    font-weight: 900;
+    /* Texto super ousado (negrito maximo) */
+    color: var(--netflix-red);
+    /* Cor vermelha da Netflix */
+    letter-spacing: 4px;
+    /* Espaco grande entre letras */
+    font-family: Arial, sans-serif;
+    /* Fonte mais ousada */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Sombra para destaque */
+}
+
+/* BOTAO DE TOGGLE DE TEMA */
+#theme-toggle {
+    background: none;
+    /* Sem fundo */
+    border: none;
+    /* Sem borda */
+    font-size: 1.5rem;
+    /* Tamanho do icone */
+    cursor: pointer;
+    /* Cursor de clique */
+    color: var(--netflix-light);
+    /* Cor clara */
+    transition: var(--transition);
+    /* Transicao suave */
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+    /* Aumenta ao passar mouse */
 }
 
 /* MAIN */
 main {
-    min-height: 100vh;       /* Ocupa no minimo a altura total da tela */
-    display: flex;           /* Habilita flexbox para organizar filhos */
-    flex-direction: column;  /* Organiza elementos na vertical (coluna) */
-    justify-content: center; /* Centraliza elementos verticalmente */
-    align-items: center;     /* Centraliza elementos horizontalmente */
-    padding: 2rem;           /* Espacamento interno (32px em todos os lados) */
-    margin-top: 10px;        /* Espacamento reduzido do topo para deixar espaco da navbar */
+    min-height: 100vh;
+    /* Ocupa no minimo a altura total da tela */
+    display: flex;
+    /* Habilita flexbox para organizar filhos */
+    flex-direction: column;
+    /* Organiza elementos na vertical (coluna) */
+    justify-content: center;
+    /* Centraliza elementos verticalmente */
+    align-items: center;
+    /* Centraliza elementos horizontalmente */
+    padding: 2rem;
+    /* Espacamento interno (32px em todos os lados) */
+    margin-top: 10px;
+    /* Espacamento reduzido do topo para deixar espaco da navbar */
 }
 
 /* HEADER */
 header {
-    text-align: center;      /* Centraliza o texto */
-    margin-bottom: 1rem;     /* Espacamento inferior (64px) */
+    text-align: center;
+    /* Centraliza o texto */
+    margin-bottom: 1rem;
+    /* Espacamento inferior (64px) */
 }
 
 header h1 {
-    font-size: clamp(2rem, 5vw, 4rem);  /* Tamanho responsivo: minimo 2rem, ideal 5% da tela, maximo 4rem */
-    font-weight: 700;        /* Deixa o texto mais ousado (negrito) */
-    letter-spacing: 1px;     /* Espacamento entre letras */
-    margin-bottom: 1rem;     /* Espacamento inferior (16px) */
-    color: var(--netflix-light); /* Cor branca */
-    animation: slideDown 0.6s ease; /* Aplica animacao de deslize para baixo */
+    font-size: clamp(2rem, 5vw, 4rem);
+    /* Tamanho responsivo: minimo 2rem, ideal 5% da tela, maximo 4rem */
+    font-weight: 700;
+    /* Deixa o texto mais ousado (negrito) */
+    letter-spacing: 1px;
+    /* Espacamento entre letras */
+    margin-bottom: 1rem;
+    /* Espacamento inferior (16px) */
+    color: var(--netflix-light);
+    /* Cor branca */
+    animation: slideDown 0.6s ease;
+    /* Aplica animacao de deslize para baixo */
 }
 
 @keyframes slideDown {
     from {
-        opacity: 0;          /* Comeca invisivel (transparencia total) */
-        transform: translateY(-30px); /* Comeca 30px acima */
+        opacity: 0;
+        /* Comeca invisivel (transparencia total) */
+        transform: translateY(-30px);
+        /* Comeca 30px acima */
     }
+
     to {
-        opacity: 1;          /* Termina visivel (sem transparencia) */
-        transform: translateY(0); /* Termina na posicao original */
+        opacity: 1;
+        /* Termina visivel (sem transparencia) */
+        transform: translateY(0);
+        /* Termina na posicao original */
     }
 }
 
 /* SECAO DE PERFIS */
 .profiles {
-    display: grid;           /* Habilita grid para layout responsivo */
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Cria colunas dinamicas de minimo 120px */
-    gap: 2rem;               /* Espacamento entre items (32px) */
-    max-width: 700px;        /* Largura maxima do container */
-    width: 100%;             /* Ocupa 100% da largura disponivel */
+    display: grid;
+    /* Habilita grid para layout responsivo */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    /* Cria colunas dinamicas de minimo 120px */
+    gap: 2rem;
+    /* Espacamento entre items (32px) */
+    max-width: 700px;
+    /* Largura maxima do container */
+    width: 100%;
+    /* Ocupa 100% da largura disponivel */
 }
 
 /* CARD DO PERFIL */
 .profile {
-    display: flex;           /* Habilita flexbox */
-    flex-direction: column;  /* Organiza elementos na vertical */
-    align-items: center;     /* Centraliza items horizontalmente */
-    cursor: pointer;         /* Muda cursor para "indicador de clique" */
-    animation: fadeIn 0.8s ease; /* Aplica animacao de fade in */
-    text-decoration: none;   /* Remove sublinhado do link */
-    color: inherit;          /* Herda cor do texto pai */
+    display: flex;
+    /* Habilita flexbox */
+    flex-direction: column;
+    /* Organiza elementos na vertical */
+    align-items: center;
+    /* Centraliza items horizontalmente */
+    cursor: pointer;
+    /* Muda cursor para "indicador de clique" */
+    animation: fadeIn 0.8s ease;
+    /* Aplica animacao de fade in */
+    text-decoration: none;
+    /* Remove sublinhado do link */
+    color: inherit;
+    /* Herda cor do texto pai */
 }
 
 @keyframes fadeIn {
     from {
-        opacity: 0;          /* Comeca invisivel */
-        transform: scale(0.8); /* Comeca 20% menor */
+        opacity: 0;
+        /* Comeca invisivel */
+        transform: scale(0.8);
+        /* Comeca 20% menor */
     }
+
     to {
-        opacity: 1;          /* Termina visivel */
-        transform: scale(1); /* Termina no tamanho original */
+        opacity: 1;
+        /* Termina visivel */
+        transform: scale(1);
+        /* Termina no tamanho original */
     }
 }
 
 /* FIGURA (IMAGEM) */
 figure {
-    position: relative;      /* Habilita posicionamento relativo para filhos absolutos */
-    width: 100%;             /* Ocupa 100% da largura do pai */
-    aspect-ratio: 1;         /* Mantém proporção 1:1 (quadrado) */
-    margin: 0;               /* Remove margens padrao */
-    overflow: hidden;        /* Esconde conteudo que sai das bordas */
-    border-radius: 8px;      /* Cantos arredondados de 8px */
-    transition: var(--transition); /* Aplica transicao suave */
+    position: relative;
+    /* Habilita posicionamento relativo para filhos absolutos */
+    width: 100%;
+    /* Ocupa 100% da largura do pai */
+    aspect-ratio: 1;
+    /* Mantém proporção 1:1 (quadrado) */
+    margin: 0;
+    /* Remove margens padrao */
+    overflow: hidden;
+    /* Esconde conteudo que sai das bordas */
+    border-radius: 8px;
+    /* Cantos arredondados de 8px */
+    transition: var(--transition);
+    /* Aplica transicao suave */
 }
 
 figure img {
-    width: 100%;             /* Ocupa 100% da figura */
-    height: 100%;            /* Ocupa 100% da altura */
-    object-fit: cover;       /* Preenche a figura mantendo proporcoes */
-    display: block;          /* Remove espacos em branco de inline */
-    transition: var(--transition); /* Aplica transicao suave */
+    width: 100%;
+    /* Ocupa 100% da figura */
+    height: 100%;
+    /* Ocupa 100% da altura */
+    object-fit: cover;
+    /* Preenche a figura mantendo proporcoes */
+    display: block;
+    /* Remove espacos em branco de inline */
+    transition: var(--transition);
+    /* Aplica transicao suave */
 }
 
 /* EFEITOS NO HOVER DO PERFIL */
 .profile:hover figure {
-    box-shadow: 0 0 20px rgba(229, 9, 20, 0.6); /* Adiciona brilho vermelho ao passar mouse */
-    transform: scale(1.05); /* Aumenta imagem em 5% */
-    border: 3px solid var(--netflix-red); /* Adiciona borda vermelha */
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.6);
+    /* Adiciona brilho vermelho ao passar mouse */
+    transform: scale(1.05);
+    /* Aumenta imagem em 5% */
+    border: 3px solid var(--netflix-red);
+    /* Adiciona borda vermelha */
 }
 
 .profile:hover figure img {
-    filter: brightness(1.1) contrast(1.1); /* Torna imagem 10% mais clara e mais contrastada */
+    filter: brightness(1.1) contrast(1.1);
+    /* Torna imagem 10% mais clara e mais contrastada */
 }
 
 .profile:active figure {
-    transform: scale(0.98); /* Reduz 2% ao clique para feedback visual */
+    transform: scale(0.98);
+    /* Reduz 2% ao clique para feedback visual */
 }
 
 /* FIGCAPTION (NOME DO PERFIL) */
 figcaption {
-    margin-top: 1rem;        /* Espacamento superior (16px) */
-    font-size: 1.3rem;       /* Tamanho grande para o nome (20.8px) */
-    font-weight: 700;        /* Texto ousado (negrito) */
-    color: var(--netflix-light); /* Cor branca */
-    transition: var(--transition); /* Transicao suave */
-    letter-spacing: 0.5px;   /* Pequeno espacamento entre letras */
-    text-align: center;      /* Centraliza o texto */
-    word-break: break-word;  /* Quebra palavras longas se necessario */
-    display: block;          /* Garante que é um bloco display */
-    width: 100%;             /* Ocupa 100% da largura */
-    visibility: visible;     /* Garante que é visivel */
-    opacity: 1;              /* Garante que não é transparente */
+    margin-top: 1rem;
+    /* Espacamento superior (16px) */
+    font-size: 1.3rem;
+    /* Tamanho grande para o nome (20.8px) */
+    font-weight: 700;
+    /* Texto ousado (negrito) */
+    color: var(--netflix-light);
+    /* Cor branca */
+    transition: var(--transition);
+    /* Transicao suave */
+    letter-spacing: 0.5px;
+    /* Pequeno espacamento entre letras */
+    text-align: center;
+    /* Centraliza o texto */
+    word-break: break-word;
+    /* Quebra palavras longas se necessario */
+    display: block;
+    /* Garante que é um bloco display */
+    width: 100%;
+    /* Ocupa 100% da largura */
+    visibility: visible;
+    /* Garante que é visivel */
+    opacity: 1;
+    /* Garante que não é transparente */
 }
 
 .profile:hover figcaption {
-    color: var(--netflix-red); /* Muda cor para vermelho no hover */
-    transform: translateY(-2px); /* Sobe 2px suavemente */
+    color: var(--netflix-red);
+    /* Muda cor para vermelho no hover */
+    transform: translateY(-2px);
+    /* Sobe 2px suavemente */
 }
 
 /* RESPONSIVIDADE - TABLETS (ATE 768px) */
 @media (max-width: 768px) {
     .navbar {
-        padding: 1rem 1.5rem;  /* Menos padding em tablets */
+        padding: 1rem 1.5rem;
+        /* Menos padding em tablets */
     }
 
     .logo {
-        font-size: 2rem;       /* Logo menor em tablets */
-        letter-spacing: 3px;   /* Menos espacamento entre letras */
+        font-size: 2rem;
+        /* Logo menor em tablets */
+        letter-spacing: 3px;
+        /* Menos espacamento entre letras */
     }
 
     main {
-        margin-top: 50px;      /* Margem reduzida do topo */
-        padding: 1.5rem;       /* Reduce padding em tablets */
+        margin-top: 50px;
+        /* Margem reduzida do topo */
+        padding: 1.5rem;
+        /* Reduce padding em tablets */
     }
 
     header h1 {
-        font-size: 2.5rem;     /* Reduz titulo em tablets */
-        margin-bottom: 3rem;   /* Reduz espacamento */
+        font-size: 2.5rem;
+        /* Reduz titulo em tablets */
+        margin-bottom: 3rem;
+        /* Reduz espacamento */
     }
 
     .profiles {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Colunas menores */
-        gap: 1.5rem;           /* Reduz espacamento entre items */
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        /* Colunas menores */
+        gap: 1.5rem;
+        /* Reduz espacamento entre items */
     }
 
     figcaption {
-        margin-top: 0.75rem;   /* Reduz espacamento em tablets */
-        font-size: 1.1rem;     /* Reduz tamanho do nome */
+        margin-top: 0.75rem;
+        /* Reduz espacamento em tablets */
+        font-size: 1.1rem;
+        /* Reduz tamanho do nome */
     }
 }
 
 /* RESPONSIVIDADE - CELULARES (ATE 480px) */
 @media (max-width: 480px) {
     .navbar {
-        padding: 0.8rem 1rem;  /* Padding minimo em celulares */
+        padding: 0.8rem 1rem;
+        /* Padding minimo em celulares */
     }
 
     .logo {
-        font-size: 1.5rem;     /* Logo bem menor em celulares */
-        letter-spacing: 2px;   /* Espacamento reduzido */
+        font-size: 1.5rem;
+        /* Logo bem menor em celulares */
+        letter-spacing: 2px;
+        /* Espacamento reduzido */
     }
 
     main {
-        margin-top: 40px;      /* Margem ainda mais reduzida em celulares */
+        margin-top: 40px;
+        /* Margem ainda mais reduzida em celulares */
     }
 
     header h1 {
-        font-size: 2rem;       /* Titulo menor em celulares */
-        margin-bottom: 2rem;   /* Menos espacamento */
+        font-size: 2rem;
+        /* Titulo menor em celulares */
+        margin-bottom: 2rem;
+        /* Menos espacamento */
     }
 
     .profiles {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Grid mais compacto */
-        gap: 1rem;             /* Minimo espacamento */
+        grid-template-columns: repeat(2, 1fr);
+        /* Duas colunas fixas */
+        gap: 1rem;
+        /* Espacamento reduzido */
     }
 
     figure {
-        border-radius: 4px;  /* Cantos menos arredondados em celulares */
+        border-radius: 4px;
+        /* Cantos menos arredondados em celulares */
     }
 
     figcaption {
-        font-size: 1rem;     /* Nome menor em celulares */
+        font-size: 1rem;
+        /* Nome menor em celulares */
     }
+}
+
+/* RESPONSIVIDADE - CELULARES MUITO PEQUENOS (ATE 320px) */
+@media (max-width: 320px) {
+    .navbar {
+        padding: 0.5rem 0.8rem;
+        /* Padding ainda menor */
+    }
+
+    .logo {
+        font-size: 1.2rem;
+        /* Logo muito pequeno */
+        letter-spacing: 1px;
+        /* Espacamento minimo */
+    }
+
+    main {
+        padding: 1rem;
+        /* Padding reduzido */
+        margin-top: 30px;
+        /* Margem minima */
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        /* Titulo muito pequeno */
+        margin-bottom: 1.5rem;
+        /* Espacamento reduzido */
+    }
+
+    .profiles {
+        grid-template-columns: repeat(2, 1fr);
+        /* Fixa 2 colunas */
+        gap: 0.8rem;
+        /* Espacamento pequeno */
+    }
+
+    figure {
+        border-radius: 2px;
+        /* Cantos minimos */
+    }
+
+    figcaption {
+        font-size: 0.9rem;
+        /* Nome pequeno */
+        margin-top: 0.5rem;
+        /* Espacamento reduzido */
+    }
+}
+
+/* RESPONSIVIDADE - DESKTOPS GRANDES (A PARTIR DE 1025px) */
+@media (min-width: 1025px) {
+    .navbar {
+        padding: 2rem 3rem;
+        /* Mais padding em telas grandes */
+    }
+
+    .logo {
+        font-size: 3rem;
+        /* Logo maior */
+        letter-spacing: 5px;
+        /* Mais espacamento */
+    }
+
+    main {
+        padding: 3rem;
+        /* Mais padding */
+        margin-top: 20px;
+        /* Ajuste de margem */
+    }
+
+    header h1 {
+        font-size: 5rem;
+        /* Titulo maior */
+        margin-bottom: 2rem;
+        /* Mais espacamento */
+    }
+
+    .profiles {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        /* Colunas maiores */
+        gap: 3rem;
+        /* Mais espacamento */
+        max-width: 1000px;
+        /* Largura maxima maior */
+    }
+
+    figcaption {
+        font-size: 1.5rem;
+        /* Nome maior */
+        margin-top: 1.5rem;
+        /* Mais espacamento */
+    }
+
+    /* MODO CLARO */
+    .light-mode {
+        background: linear-gradient(135deg, #f5f5f1 0%, #ffffff 100%);
+        /* Fundo claro */
+        color: #0f0f0f;
+        /* Texto escuro */
+    }
+
+    .light-mode .navbar {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, transparent 100%);
+        /* Fundo claro na navbar */
+    }
+
+    .light-mode .logo {
+        color: #0f0f0f;
+        /* Logo escuro */
+    }
+
+    .light-mode #theme-toggle {
+        color: #0f0f0f;
+        /* Botao escuro no modo claro */
+    }
+
+    .light-mode header h1 {
+        color: #0f0f0f;
+        /* Titulo escuro */
+    }
+
+    .light-mode figcaption {
+        color: #0f0f0f;
+        /* Nomes dos perfis escuros */
+    }
+
+    .light-mode .profile:hover figcaption {
+        color: var(--netflix-red);
+        /* Mantem vermelho no hover */
+    }
+}
+
+/* MODO CLARO */
+.light-mode {
+    background: linear-gradient(135deg, #f5f5f1 0%, #ffffff 100%);
+    /* Fundo claro */
+    color: #0f0f0f;
+    /* Texto escuro */
+}
+
+.light-mode .navbar {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, transparent 100%);
+    /* Fundo claro na navbar */
+}
+
+.light-mode .logo {
+    color: #0f0f0f;
+    /* Logo escuro */
+}
+
+.light-mode #theme-toggle {
+    color: #0f0f0f;
+    /* Botao escuro no modo claro */
+}
+
+.light-mode header h1 {
+    color: #0f0f0f;
+    /* Titulo escuro */
+}
+
+.light-mode figcaption {
+    color: #0f0f0f;
+    /* Nomes dos perfis escuros */
+}
+
+.light-mode .profile:hover figcaption {
+    color: var(--netflix-red);
+    /* Mantem vermelho no hover */
 }
 
 /* ACESSIBILIDADE - RESPEITA PREFERENCIA DE MOVIMENTO REDUZIDO */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
-        animation-duration: 0.01ms !important; /* Desabilita animacoes (muito rapido = invisivel) */
-        animation-iteration-count: 1 !important; /* Executa apenas uma vez */
-        transition-duration: 0.01ms !important; /* Desabilita transicoes */
+        animation-duration: 0.01ms !important;
+        /* Desabilita animacoes (muito rapido = invisivel) */
+        animation-iteration-count: 1 !important;
+        /* Executa apenas uma vez */
+        transition-duration: 0.01ms !important;
+        /* Desabilita transicoes */
     }
 }
 
 /* FOCO PARA NAVEGACAO POR TECLADO */
 .profile:focus-within figure {
-    box-shadow: 0 0 20px rgba(229, 9, 20, 0.6); /* Brilho vermelho ao focar */
-    border: 3px solid var(--netflix-red); /* Borda vermelha para indicar foco */
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.6);
+    /* Brilho vermelho ao focar */
+    border: 3px solid var(--netflix-red);
+    /* Borda vermelha para indicar foco */
 }
