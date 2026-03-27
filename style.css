@@ -251,7 +251,7 @@ figure {
     width: 100%;
     /* Ocupa 100% da largura do pai */
     aspect-ratio: 1;
-    /* MantÃ©m proporÃ§Ã£o 1:1 (quadrado) */
+    /* MantÃÂ©m proporÃÂ§ÃÂ£o 1:1 (quadrado) */
     margin: 0;
     /* Remove margens padrao */
     overflow: hidden;
@@ -314,13 +314,13 @@ figcaption {
     word-break: break-word;
     /* Quebra palavras longas se necessario */
     display: block;
-    /* Garante que Ã© um bloco display */
+    /* Garante que ÃÂ© um bloco display */
     width: 100%;
     /* Ocupa 100% da largura */
     visibility: visible;
-    /* Garante que Ã© visivel */
+    /* Garante que ÃÂ© visivel */
     opacity: 1;
-    /* Garante que nÃ© Ã© transparente */
+    /* Garante que nÃÂ© ÃÂ© transparente */
 }
 
 .profile:hover figcaption {

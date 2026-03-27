@@ -17,6 +17,28 @@ body {
     overflow-x: hidden;
 }
 
+body.catalog-page {
+    background-image: url('../assets/bg-catalogo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body.catalog-page::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 20, 20, 0.65);
+    z-index: 1;
+}
+
+main, .sliders-container {
+    position: relative;
+    z-index: 2;
+}
+
+
 a {
     text-decoration: none;
     color: #e5e5e5;
