@@ -27,6 +27,12 @@
     /* Inclui border e padding no calculo da largura/altura */
 }
 
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden !important;
+}
+
 html {
     font-size: 14px;
     /* Tamanho base da fonte - 1rem = 16px */
@@ -45,6 +51,27 @@ body {
     /* Ocupa no minimo a altura total da tela */
     overflow: hidden;
     /* Remove a barra de rolagem e impede o scroll */
+}
+
+/* TELA DE CARREGAMENTO */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--netflix-darker);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loading-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* NAVBAR COM LOGO */
@@ -112,6 +139,10 @@ body {
 main {
     min-height: 100vh;
     /* Ocupa no minimo a altura total da tela */
+    width: 100%;
+    /* Ocupa 100% da largura */
+    overflow: hidden;
+    /* Remove a barra de rolagem e impede o scroll */
     display: flex;
     /* Habilita flexbox para organizar filhos */
     flex-direction: column;
@@ -135,7 +166,7 @@ header {
 }
 
 header h1 {
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(1.5rem, 3vw, 4rem);
     /* Tamanho responsivo: minimo 2rem, ideal 5% da tela, maximo 4rem */
     font-weight: 700;
     /* Deixa o texto mais ousado (negrito) */
@@ -169,11 +200,11 @@ header h1 {
 .profiles {
     display: grid;
     /* Habilita grid para layout responsivo */
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     /* Cria colunas dinamicas de minimo 120px */
-    gap: 2rem;
+    gap: 1rem;
     /* Espacamento entre items (32px) */
-    max-width: 700px;
+    max-width: 300px;
     /* Largura maxima do container */
     width: 100%;
     /* Ocupa 100% da largura disponivel */
@@ -289,7 +320,7 @@ figcaption {
     visibility: visible;
     /* Garante que Ã© visivel */
     opacity: 1;
-    /* Garante que nÃ£o Ã© transparente */
+    /* Garante que nÃ© Ã© transparente */
 }
 
 .profile:hover figcaption {

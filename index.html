@@ -11,7 +11,15 @@
 </head>
 
 <body>
-    <main>
+    <!-- Tela de Carregamento Fullscreen -->
+    <div id="loading-screen" class="loading-screen">
+        <video id="loading-video" autoplay muted class="loading-video">
+            <source src="./assets/Netflix-Logo-Animation.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo.
+        </video>
+    </div>
+
+    <main style="display: none;">
         <nav class="navbar">
             <div class="logo">NETFLIX</div>
             <button id="theme-toggle" aria-label="Alternar tema">&#x1F319;</button>
