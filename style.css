@@ -220,7 +220,7 @@ figure {
     width: 100%;
     /* Ocupa 100% da largura do pai */
     aspect-ratio: 1;
-    /* Mantém proporção 1:1 (quadrado) */
+    /* MantÃ©m proporÃ§Ã£o 1:1 (quadrado) */
     margin: 0;
     /* Remove margens padrao */
     overflow: hidden;
@@ -283,13 +283,13 @@ figcaption {
     word-break: break-word;
     /* Quebra palavras longas se necessario */
     display: block;
-    /* Garante que é um bloco display */
+    /* Garante que Ã© um bloco display */
     width: 100%;
     /* Ocupa 100% da largura */
     visibility: visible;
-    /* Garante que é visivel */
+    /* Garante que Ã© visivel */
     opacity: 1;
-    /* Garante que não é transparente */
+    /* Garante que nÃ£o Ã© transparente */
 }
 
 .profile:hover figcaption {

@@ -2,7 +2,7 @@
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
-// Função para alternar tema
+// FunÃ§Ã£o para alternar tema
 themeToggle.addEventListener('click', () => {
     body.classList.toggle('light-mode');
     const isLight = body.classList.contains('light-mode');
